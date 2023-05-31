@@ -25,7 +25,7 @@ exports.greet = async (req, res, next) => {
 exports.setCookie = async (req, res, next) => {
   res
     .cookie("jwt", "this is my jwt cookie", {
-      httpOnly: true,
+      httpOnly: false,
       secure: true,
       expires: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
       path: "/",
