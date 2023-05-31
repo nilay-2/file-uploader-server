@@ -5,7 +5,11 @@ const globalErrHandler = require("./globalErrHandler");
 const fileUploadRouter = require("./routes/fileUploadRoute");
 dotenv.config({ path: "./.env" });
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://file-uploader-client.vercel.app",
+  })
+);
 app.use(express.json());
 
 const port = process.env.PORT || 8000;

@@ -7,4 +7,6 @@ router
   .route("/uploadFile")
   .post(fileUploadController.uploadMiddleware, fileUploadController.uploadFile);
 
+router.route("/").get(fileUploadController.greet);
+
 module.exports = router;
