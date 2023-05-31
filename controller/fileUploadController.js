@@ -10,8 +10,8 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({
-  dest: `${__dirname}/../public/uploads`,
-  storage,
+  // dest: `${__dirname}/../public/uploads`,
+  // storage,
   limits: { fileSize: 1000000 * 100 },
 });
 
