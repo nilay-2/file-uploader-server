@@ -25,9 +25,13 @@ exports.greet = async (req, res, next) => {
 exports.uploadMiddleware = upload.single("file");
 
 exports.uploadFile = async (req, res, next) => {
-  console.log(req.file);
-  res.status(200).json({
-    status: "success",
-    message: "file received",
-  });
+  try {
+    console.log(req.file);
+    res.status(200).json({
+      status: "success",
+      message: "file received",
+    });
+  } catch (error) {
+    next(error);
+  }
 };
