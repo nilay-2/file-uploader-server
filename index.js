@@ -11,7 +11,7 @@ app.use(
   })
 );
 app.use(express.json());
-
+app.use(express.static("public"));
 const port = process.env.PORT || 8000;
 
 app.use("/api", fileUploadRouter);
