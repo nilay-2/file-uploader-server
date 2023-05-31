@@ -30,7 +30,7 @@ exports.setCookie = async (req, res, next) => {
       expires: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
       path: "/",
       domain: "https://file-uploader-client.vercel.app/",
-      // sameSite: "none",
+      sameSite: "none",
     })
     .json({
       status: "success",
