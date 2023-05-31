@@ -25,11 +25,11 @@ exports.greet = async (req, res, next) => {
 exports.setCookie = async (req, res, next) => {
   res
     .cookie("jwt", "this is my jwt cookie", {
-      httpOnly: false,
+      httpOnly: true,
       secure: true,
       expires: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
       path: "/",
-      domain: "https://file-uploader-client.vercel.app/",
+      domain: "https://file-uploader-server-mern.vercel.app/",
       sameSite: "none",
     })
     .json({
