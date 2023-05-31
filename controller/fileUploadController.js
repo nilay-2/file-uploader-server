@@ -28,6 +28,7 @@ exports.setCookie = async (req, res, next) => {
       httpOnly: true,
       secure: true,
       expires: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
+      path: "/",
     })
     .json({
       status: "success",
