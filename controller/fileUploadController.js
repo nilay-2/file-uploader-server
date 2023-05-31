@@ -10,7 +10,7 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({
-  // dest: `${__dirname}/../public/uploads`,
+  // dest: `${__dirname}/../public/uploads`, // file upload using multer to the project directory on vercel is not supported
   // storage,
   limits: { fileSize: 1000000 * 100 },
 });
