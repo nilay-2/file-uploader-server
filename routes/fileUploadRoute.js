@@ -11,4 +11,5 @@ router.route("/").get(fileUploadController.greet);
 
 router.route("/setCookie").post(fileUploadController.setCookie);
 
+router.route("/getCookie").get(fileUploadController.getCookie);
 module.exports = router;

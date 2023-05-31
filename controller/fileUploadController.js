@@ -38,6 +38,13 @@ exports.setCookie = async (req, res, next) => {
     });
 };
 
+exports.getCookie = async (req, res, next) => {
+  res.json({
+    status: "success",
+    cookie: req.cookies,
+  });
+};
+
 exports.uploadMiddleware = upload.single("file");
 
 exports.uploadFile = async (req, res, next) => {
