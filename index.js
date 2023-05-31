@@ -9,6 +9,7 @@ const app = express();
 app.use(
   cors({
     origin: "https://file-uploader-client.vercel.app",
+    credentials: true,
   })
 );
 app.use(cookieParser());
