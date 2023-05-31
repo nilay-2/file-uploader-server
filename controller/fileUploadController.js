@@ -30,6 +30,7 @@ exports.uploadFile = async (req, res, next) => {
     res.status(200).json({
       status: "success",
       message: "file received",
+      file: req.file,
     });
   } catch (error) {
     next(error);
