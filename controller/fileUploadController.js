@@ -29,6 +29,7 @@ exports.setCookie = async (req, res, next) => {
       secure: true,
       expires: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
       path: "/",
+      domain: "file-uploader-server-mern.vercel.app",
     })
     .json({
       status: "success",
