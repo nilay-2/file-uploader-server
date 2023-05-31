@@ -22,6 +22,18 @@ exports.greet = async (req, res, next) => {
   });
 };
 
+exports.setCookie = async (req, res, next) => {
+  res
+    .cookie("jwt", "this is my jwt cookie", {
+      secure: true,
+      expires: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
+    })
+    .json({
+      status: "success",
+      message: "Cookie is set",
+    });
+};
+
 exports.uploadMiddleware = upload.single("file");
 
 exports.uploadFile = async (req, res, next) => {
