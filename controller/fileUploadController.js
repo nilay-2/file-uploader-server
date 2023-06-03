@@ -3,7 +3,7 @@ const path = require("path");
 const storage = multer.diskStorage({
   destination: (req, file, cb) => cb(null, "./public/uploads"),
   filename: (req, file, cb) => {
-    const uniqueName = `${Date.now()}-${file.originalname}`;
+    const uniqueName = file.originalname;
     console.log(uniqueName);
     cb(null, uniqueName);
   },
@@ -55,6 +55,7 @@ exports.uploadFile = async (req, res, next) => {
       status: "success",
       message: "file received",
       file: req.file,
+      url: `https://file-uploader-server-production.up.railway.app/uploads/${file.originalname}`,
     });
   } catch (error) {
     next(error);
