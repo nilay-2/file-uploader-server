@@ -55,7 +55,7 @@ exports.uploadFile = async (req, res, next) => {
       status: "success",
       message: "file received",
       file: req.file,
-      url: `https://file-uploader-server-production.up.railway.app/uploads/${file.filename}`,
+      url: `https://file-uploader-server-production.up.railway.app/uploads/${req.file.filename}`,
     });
   } catch (error) {
     next(error);
