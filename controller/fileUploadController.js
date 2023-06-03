@@ -26,11 +26,12 @@ exports.setCookie = async (req, res, next) => {
   res
     .cookie("jwt", "this is my jwt cookie", {
       httpOnly: true,
-      secure: true,
+      secure: false,
       expires: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
       path: "/",
-      domain: "file-uploader-server-mern.vercel.app", // there is difference between url and domain url: https://file-uploader-client.vercel.app, domain: file-uploader-client.vercel.app
-      sameSite: "none",
+      // domain: "file-uploader-server-mern.vercel.app", // there is difference between url and domain url: https://file-uploader-client.vercel.app, domain: file-uploader-client.vercel.app
+      domain: "localhost",
+      // sameSite: "none",
     })
     .json({
       status: "success",

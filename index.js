@@ -8,8 +8,8 @@ dotenv.config({ path: "./.env" });
 const app = express();
 app.use(
   cors({
-    // origin: "http://localhost:3000",
-    origin: "https://file-uploader-client.vercel.app",
+    origin: "http://localhost:3000",
+    // origin: "https://file-uploader-client.vercel.app",
     credentials: true,
   })
 );
